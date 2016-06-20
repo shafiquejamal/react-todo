@@ -12,4 +12,15 @@ describe('TodoApp', () => {
     expect(TodoApp).toExist();
   });
 
+  it('should add todo to the todos state on handleAddToto', () => {
+    var todoText = 'test text';
+    var todoApp = TestUtils.renderIntoDocument(<TodoApp/>);
+
+    todoApp.setState({todos: []});
+    todoApp.handleAddToto(todoText);
+
+    expect(todoApp.state.todos[0].text).toBe(todoText);
+    
+  });
+
 });
