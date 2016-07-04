@@ -1,10 +1,10 @@
 import firebase from 'firebase';
 
 var config = {
-    apiKey: "AIzaSyDu97GgcjMcZ2hUPXN6laDC0NuGXHB2DzI",
-    authDomain: "jamal-todo-app.firebaseapp.com",
-    databaseURL: "https://jamal-todo-app.firebaseio.com",
-    storageBucket: "jamal-todo-app.appspot.com",
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    storageBucket: process.env.STORAGE_BUCKET,
   };
 firebase.initializeApp(config);
 
@@ -13,7 +13,7 @@ var firebaseRef = firebase.database().ref()
 firebaseRef.set({
   app: {
     name: 'Original app name',
-    version: '0.1' 
+    version: '0.1'
   },
   isRunning: true,
   user: {

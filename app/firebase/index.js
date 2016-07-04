@@ -2,10 +2,10 @@ import firebase from 'firebase';
 
 try {
   var config = {
-      apiKey: "AIzaSyDu97GgcjMcZ2hUPXN6laDC0NuGXHB2DzI",
-      authDomain: "jamal-todo-app.firebaseapp.com",
-      databaseURL: "https://jamal-todo-app.firebaseio.com",
-      storageBucket: "jamal-todo-app.appspot.com",
+      apiKey: process.env.API_KEY,
+      authDomain: process.env.AUTH_DOMAIN,
+      databaseURL: process.env.DATABASE_URL,
+      storageBucket: process.env.STORAGE_BUCKET
   };
 
   firebase.initializeApp(config);
@@ -14,4 +14,4 @@ try {
 }
 
 export var firebaseRef = firebase.database().ref()
-export default firebase; 
+export default firebase;
