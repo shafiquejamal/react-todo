@@ -150,6 +150,24 @@ describe('Reducers', () => {
       expect(response.length).toEqual(1);
       expect(response[0]).toEqual(todos[0]);
     });
+
+    it('should clear todos from the state after logout', () => {
+      const action = {
+        type: 'LOGOUT'
+      };
+
+      const todos = [{
+        id: 111,
+        text: 'anything',
+        completed: false,
+        completedAt: undefined,
+        createdAt: 3300
+        }];
+
+      var response = reducers.todosReducer(df(todos), df(action));
+      expect(response.length).toEqual(0);  
+
+    });
   });
 
 
